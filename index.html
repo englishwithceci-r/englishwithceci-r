@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English with Ceci | Clases de inglés online</title>
+    <meta name="description" content="Clases de inglés online personalizadas y prácticas con Cecilia Rocco Grandal. Planes conversacionales, inglés para profesionales (B2+), viajes y grupos reducidos por nivel.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Fraunces for warm editorial elegance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Fraunces"', 'serif'],
+                    },
+                    colors: {
+                        cream: {
+                            50: '#FDFBF7',
+                            100: '#F9F5EC',
+                            200: '#F1E9D8',
+                        },
+                        espresso: {
+                            800: '#2A211C',
+                            900: '#1B1512',
+                        },
+                        terracotta: {
+                            500: '#D4623F',
+                            600: '#BE4E2B',
+                            700: '#9E3E20',
+                        },
+                        sage: {
+                            50: '#F2F7F4',
+                            100: '#E1EDE6',
+                            600: '#3D6B58',
+                            700: '#2E5343',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom subtle animations and utilities */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+        .card-hover {
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-cream-50 text-espresso-900 font-sans antialiased selection:bg-terracotta-500 selection:text-white">
+
+    <!-- ==================== STICKY NAVBAR ==================== -->
+    <header class="sticky top-0 z-50 bg-cream-50/90 backdrop-blur-md border-b border-cream-200 transition-all">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-terracotta-600 text-white flex items-center justify-center font-serif font-bold text-xl shadow-sm group-hover:bg-terracotta-700 transition-colors">
+                    C
+                </div>
+                <div>
+                    <span class="font-serif font-semibold text-lg sm:text-xl tracking-tight text-espresso-900 block leading-none">English with Ceci</span>
+                    <span class="text-xs text-stone-500 font-medium tracking-wide">CLASES DE INGLÉS ONLINE</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-stone-700">
+                <a href="#methodology" class="hover:text-terracotta-600 transition-colors">Metodología</a>
+                <a href="#courses" class="hover:text-terracotta-600 transition-colors">Cursos 1:1</a>
+                <a href="#group-classes" class="hover:text-terracotta-600 transition-colors">Clases grupales</a>
+                <a href="#materials" class="hover:text-terracotta-600 transition-colors">Materiales</a>
+                <a href="#schedule-pricing" class="hover:text-terracotta-600 transition-colors">Agenda y precios</a>
+                <a href="#about" class="hover:text-terracotta-600 transition-colors">Sobre Mí</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="#schedule-pricing" class="px-5 py-2.5 rounded-xl bg-espresso-900 hover:bg-terracotta-600 text-white font-semibold text-sm transition-all shadow-sm flex items-center gap-2">
+                    <span>Reservar charla inicial</span>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" aria-label="Abrir menú" class="lg:hidden p-2.5 rounded-xl bg-cream-100 text-espresso-900 hover:bg-cream-200 transition-colors">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-cream-50 border-b border-cream-200 px-4 pt-2 pb-6 space-y-2.5">
+            <a href="#methodology" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-stone-800 hover:bg-cream-100">Metodología</a>
+            <a href="#courses" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-stone-800 hover:bg-cream-100">Cursos y temáticas (1:1)</a>
+            <a href="#group-classes" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-stone-800 hover:bg-cream-100">Clases grupales por nivel</a>
+            <a href="#materials" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-stone-800 hover:bg-cream-100">Materiales de muestra</a>
+            <a href="#schedule-pricing" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-stone-800 hover:bg-cream-100">Agenda 1:1 y Precios</a>
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-stone-800 hover:bg-cream-100">Sobre mí</a>
+            <div class="pt-2">
+                <a href="#schedule-pricing" class="mobile-link w-full py-3 rounded-xl bg-terracotta-600 text-white font-semibold text-center block shadow-sm">
+                    Agendar charla inicial gratis
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="relative overflow-hidden pt-10 pb-20 md:py-24">
+        <div class="absolute top-12 right-10 w-72 h-72 bg-terracotta-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-80 h-80 bg-sage-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sage-100 text-sage-700 text-xs sm:text-sm font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-sage-600 animate-pulse"></span>
+                        <span>Clases de inglés online</span>
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-espresso-900 leading-[1.12] tracking-tight">
+                        Hablá inglés con <span class="text-terracotta-600 italic font-normal">confianza</span> en tu vida real y profesional.
+                    </h1>
+                    <p class="text-lg sm:text-xl text-stone-600 leading-relaxed max-w-2xl">
+                        ¡Hola, soy <strong class="text-espresso-900 font-semibold">Ceci</strong>! Desde Montevideo, Uruguay, combino mi formación en <strong class="text-espresso-900 font-medium">Ciencias Sociales </strong> y experiencia docente con conversaciones dinámicas y del mundo real para ayudarte a alcanzar la fluidez.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3.5 pt-2">
+                        <a href="#schedule-pricing" class="px-7 py-4 rounded-2xl bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-base shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2.5">
+                            <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                            <span>Agendá una charla inicial gratis de 20 min</span>
+                        </a>
+                        <a href="#courses" class="px-6 py-4 rounded-2xl bg-white hover:bg-cream-100 text-espresso-900 border border-cream-200 font-semibold text-base shadow-sm transition-all flex items-center justify-center gap-2">
+                            <span>Ver Cursos y Grupos</span>
+                            <i data-lucide="arrow-down" class="w-4 h-4 text-terracotta-600"></i>
+                        </a>
+                    </div>
+                    <div class="pt-6 border-t border-cream-200 grid grid-cols-3 gap-4 max-w-lg text-left">
+                        <div>
+                            <p class="font-serif font-bold text-2xl text-espresso-900">100%</p>
+                            <p class="text-xs text-stone-500 font-medium">Adaptado a tus objetivos</p>
+                        </div>
+                        <div>
+                            <p class="font-serif font-bold text-2xl text-espresso-900">Online</p>
+                            <p class="text-xs text-stone-500 font-medium">Clases individuales y grupales</p>
+                        </div>
+                        <div>
+                            <p class="font-serif font-bold text-2xl text-espresso-900">Todos los niveles</p>
+                            <p class="text-xs text-stone-500 font-medium">Edades +12</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md">
+                        <div class="bg-white p-4 rounded-3xl shadow-xl border border-cream-200 relative z-10">
+                            <div class="aspect-[4/4.3] rounded-2xl overflow-hidden bg-cream-100 relative group">
+                                <img 
+                                    src="profile.jpg" 
+                                    onerror="this.onerror=null; this.src='https://placehold.co/600x650/E1EDE6/2E5343?text=Cecilia+%E2%80%A2+Subir+profile.jpg';"
+                                    alt="Cecilia - Profesora de Inglés Online" 
+                                    class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-espresso-900/75 via-transparent to-transparent flex items-end p-5">
+                                    <div class="text-white">
+                                        <span class="px-2.5 py-1 rounded-md bg-white/20 backdrop-blur-md text-xs font-medium uppercase tracking-wider">Desde Montevideo, Uruguay </span>
+                                        <h2 class="font-serif text-2xl font-semibold mt-1.5">Cecilia Rocco Grandal</h2>
+                                        <p class="text-cream-100 text-xs sm:text-sm opacity-90">Tutora de inglés</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-cream-100">
+                                <p class="text-xs font-semibold uppercase tracking-wider text-stone-400 mb-2.5">Temas de los que me encanta charlar en clase:</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-cream-100 text-stone-700 text-xs font-medium">
+                                        🎵 Cultura y medios
+                                    </span>
+                                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-cream-100 text-stone-700 text-xs font-medium">
+                                        🌎 Actualidad global
+                                    </span>
+                                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-cream-100 text-stone-700 text-xs font-medium">
+                                        📊 Ciencia y tecnología
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden sm:flex items-center gap-3 bg-white px-4 py-3 rounded-2xl shadow-lg border border-cream-200 absolute -bottom-5 -left-6 z-20 animate-float">
+                            <div class="w-10 h-10 rounded-xl bg-terracotta-500/15 text-terracotta-600 flex items-center justify-center">
+                                <i data-lucide="message-circle-heart" class="w-5 h-5"></i>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== METHODOLOGY SECTION ==================== -->
+    <section id="methodology" class="py-20 bg-cream-100/70 border-y border-cream-200 scroll-mt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-terracotta-600 font-semibold text-sm uppercase tracking-wider">Cómo aprendemos juntos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso-900 mt-2">
+                    Mi metodología de enseñanza
+                </h2>
+                <p class="text-stone-600 mt-3 text-base sm:text-lg">
+                    Los estudiantes no solo necesitan reglas gramaticales: necesitan ritmo, estructura y temas que realmente tengan ganas de debatir cada semana.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <div class="bg-white p-7 sm:p-8 rounded-3xl border border-cream-200 shadow-sm card-hover flex gap-5">
+                    <div class="w-12 h-12 rounded-2xl bg-terracotta-500/10 text-terracotta-600 flex items-center justify-center shrink-0">
+                        <i data-lucide="compass" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-espresso-900">100% Adaptado a tus intereses</h3>
+                        <p class="text-stone-600 mt-2 text-sm sm:text-base leading-relaxed">
+                            Aprendemos a través de contenidos que te interesan.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-7 sm:p-8 rounded-3xl border border-cream-200 shadow-sm card-hover flex gap-5">
+                    <div class="w-12 h-12 rounded-2xl bg-sage-100 text-sage-700 flex items-center justify-center shrink-0">
+                        <i data-lucide="mic" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-espresso-900">Comunicativo y práctico</h3>
+                        <p class="text-stone-600 mt-2 text-sm sm:text-base leading-relaxed">
+                            Vas a hablar desde el primer día. Hacemos juegos de rol y practicamos escenarios reales.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-7 sm:p-8 rounded-3xl border border-cream-200 shadow-sm card-hover flex gap-5">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-700 flex items-center justify-center shrink-0">
+                        <i data-lucide="line-chart" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-espresso-900">Seguimiento orientado a objetivos</h3>
+                        <p class="text-stone-600 mt-2 text-sm sm:text-base leading-relaxed">
+                            Podemos diseñar una hoja de ruta de aprendizaje clara para vos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-7 sm:p-8 rounded-3xl border border-cream-200 shadow-sm card-hover flex gap-5">
+                    <div class="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-700 flex items-center justify-center shrink-0">
+                        <i data-lucide="music" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-espresso-900">Ambiente seguro y animado</h3>
+                        <p class="text-stone-600 mt-2 text-sm sm:text-base leading-relaxed">
+                            Sé que dominar cualquier habilidad lleva repetición y perder el miedo a equivocarse. Mi aula virtual es un espacio cálido y motivador.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COURSES & FOCUS AREAS ==================== -->
+    <section id="courses" class="py-20 scroll-mt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-terracotta-600 font-semibold text-sm uppercase tracking-wider">Programas</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso-900 mt-2">
+                        Cursos y enfoques
+                    </h2>
+                </div>
+                <p class="text-stone-600 max-w-md text-sm sm:text-base">
+                    Cada programa se puede personalizar en intensidad y horarios. Combiná módulos a medida que evolucionen con tus objetivos profesionales o personales.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="bg-white rounded-3xl border border-cream-200 p-7 flex flex-col justify-between shadow-sm card-hover relative overflow-hidden">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-6">
+                            <span class="px-3 py-1 rounded-full bg-sage-100 text-sage-700 text-xs font-semibold">Práctico y cotidiano</span>
+                            <i data-lucide="messages-square" class="w-6 h-6 text-sage-600"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-espresso-900">Plan Conversacional</h3>
+                        <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+                            Ideal tanto si recién estás dando tus primeros pasos para animarte a hablar como si ya entendés inglés al leer o mirar series, pero te trabás al momento de conversar.                        </p>
+                        <ul class="mt-6 space-y-2.5 text-sm text-stone-700">
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-sage-600 shrink-0 mt-0.5"></i>
+                                <span>Todos los niveles</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-sage-600 shrink-0 mt-0.5"></i>
+                                <span>Charlas y debates sobre tus intereses y temas de actualidad</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-sage-600 shrink-0 mt-0.5"></i>
+                                <span>Expresiones naturales, pronunciación y fluidez</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-cream-100 space-y-2">
+                        <button type="button" onclick="inquireAboutPlan('Plan Conversacional (1:1)')" class="w-full py-3 rounded-xl bg-cream-100 hover:bg-espresso-900 hover:text-white text-espresso-900 font-semibold text-sm transition-colors flex items-center justify-center gap-2">
+                            <span>Consultar por el Plan Conversacional</span>
+                            <i data-lucide="message-square-plus" class="w-4 h-4"></i>
+                        </button>
+                        <a href="#schedule-pricing" class="w-full py-2 text-xs font-semibold text-stone-500 hover:text-terracotta-600 transition-colors flex items-center justify-center gap-1">
+                            <span>Ver packs 1:1 y agendar horario</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="bg-espresso-900 text-white rounded-3xl p-7 flex flex-col justify-between shadow-lg card-hover relative overflow-hidden">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-6">
+                            <span class="px-3 py-1 rounded-full bg-terracotta-500 text-white text-xs font-semibold">Desarrollo profesional</span>
+                            <i data-lucide="briefcase" class="w-6 h-6 text-terracotta-500"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold">Plan para profesionales</h3>
+                        <p class="text-cream-200/80 text-sm mt-3 leading-relaxed">
+                            Diseñado para profesionales que trabajan con equipos internacionales o se postulan a puestos remotos.
+                        </p>
+                        <ul class="mt-6 space-y-2.5 text-sm text-cream-100">
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-terracotta-500 shrink-0 mt-0.5"></i>
+                                <span>Se requiere al menos nivel Upper-Intermediate (B2) </span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-terracotta-500 shrink-0 mt-0.5"></i>
+                                <span>Presentaciones ante stakeholders y comunicación concisa con clientes y equipos multidisciplinarios</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-terracotta-500 shrink-0 mt-0.5"></i>
+                                <span>Vocabulario específico de tu sector y redacción profesional</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/10 space-y-2">
+                        <button type="button" onclick="inquireAboutPlan('Plan de Inglés para Profesionales (1:1)')" class="w-full py-3 rounded-xl bg-terracotta-600 hover:bg-terracotta-500 text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2">
+                            <span>Consultar por inglés para profesionales</span>
+                            <i data-lucide="message-square-plus" class="w-4 h-4"></i>
+                        </button>
+                        <a href="#schedule-pricing" class="w-full py-2 text-xs font-semibold text-cream-200/70 hover:text-white transition-colors flex items-center justify-center gap-1">
+                            <span>Ver packs 1:1 y agendar horario</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="bg-white rounded-3xl border border-cream-200 p-7 flex flex-col justify-between shadow-sm card-hover relative overflow-hidden">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-6">
+                            <span class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-800 text-xs font-semibold">Turismo</span>
+                            <i data-lucide="plane" class="w-6 h-6 text-amber-600"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-espresso-900">Inglés para viajes</h3>
+                        <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+                            Preparate para tu próximo viaje, mudanza, intercambio académico o festival en el exterior con inglés práctico y social.
+                        </p>
+                        <ul class="mt-6 space-y-2.5 text-sm text-stone-700">
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                                <span>Aeropuertos, transporte, alojamiento y resolución de imprevistos</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                                <span>Participar en conversaciones multiculturales</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-cream-100 space-y-2">
+                        <button type="button" onclick="inquireAboutPlan('Plan de Inglés para Viajes (1:1)')" class="w-full py-3 rounded-xl bg-cream-100 hover:bg-espresso-900 hover:text-white text-espresso-900 font-semibold text-sm transition-colors flex items-center justify-center gap-2">
+                            <span>Consultar por inglés para viajes</span>
+                            <i data-lucide="message-square-plus" class="w-4 h-4"></i>
+                        </button>
+                        <a href="#schedule-pricing" class="w-full py-2 text-xs font-semibold text-stone-500 hover:text-terracotta-600 transition-colors flex items-center justify-center gap-1">
+                            <span>Ver packs 1:1 y agendar horario</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- START: GROUP CLASSES BY LEVEL SECTION -->
+    <section id="group-classes" class="py-20 bg-cream-100/80 border-t border-cream-200 scroll-mt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-6">
+                <div class="max-w-2xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-terracotta-500/10 text-terracotta-600 text-xs font-bold uppercase tracking-wider mb-3">
+                        <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                        <span>Máx. 4–6 Estudiantes</span>
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso-900">
+                        Clases Grupales Reducidas por Nivel
+                    </h2>
+                    <p class="text-stone-600 mt-3 text-base sm:text-lg leading-relaxed">
+                        ¿Preferís aprender con compañeros? Las clases en grupos reducidos combinan el progreso estructurado por niveles MCER (CEFR), debates dinámicos y práctica oral en tiempo real a un valor accesible.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-3 shrink-0">
+                    <div class="bg-white px-4 py-3 rounded-2xl border border-cream-200 shadow-sm flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-sage-100 text-sage-700 flex items-center justify-center">
+                            <i data-lucide="users-round" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-espresso-900">Máx. 4–6 Alumnos</p>
+                            <p class="text-[11px] text-stone-500">Más tiempo de conversación</p>
+                        </div>
+                    </div>
+                    <div class="bg-white px-4 py-3 rounded-2xl border border-cream-200 shadow-sm flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-terracotta-500/10 text-terracotta-600 flex items-center justify-center">
+                            <i data-lucide="video" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-espresso-900">Sesiones sincrónicas 2 veces por semana</p>
+                            <p class="text-[11px] text-stone-500">+ Materiales compartidos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8 bg-amber-500/10 border border-amber-500/30 rounded-2xl p-4 sm:p-5 flex items-start sm:items-center gap-3.5">
+                <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-900 flex items-center justify-center shrink-0">
+                    <i data-lucide="calendar-clock" class="w-5 h-5"></i>
+                </div>
+                <p class="text-xs sm:text-sm text-espresso-900 leading-relaxed">
+                    <strong>¿Cómo se definen los horarios de los grupos?</strong> Los días y horarios de cada grupo se coordinan directamente con las <strong>primeras 2 personas inscriptas</strong> de ese nivel, asegurando un horario cómodo para quienes abren el grupo.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                <!-- Level Tier 1: A1-A2 -->
+                <div class="bg-white rounded-3xl border border-cream-200 p-6 flex flex-col justify-between shadow-sm card-hover">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-xl bg-amber-500/15 text-amber-800 font-serif font-bold text-sm">Nivel A1-A2</span>
+                            <span class="text-xs font-semibold text-stone-400">Principiante y Pre-Intermedio</span>
+                        </div>
+                        <p class="text-stone-600 text-xs sm:text-sm mt-2.5 leading-relaxed">
+                            Construcción de hábitos básicos de habla, gramática básica en la práctica y conversaciones de la vida diaria.
+                        </p>
+                        <ul class="mt-5 pt-4 border-t border-cream-100 space-y-2 text-xs text-stone-700">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                                <span>Rutinas diarias, presentaciones sociales y básicos de viaje</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                                <span>Tiempos verbales fundamentales </span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                                <span>Escucha activa y bases de pronunciación</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-cream-100 space-y-2">
+                        <a href="#schedule-pricing" class="w-full py-2.5 px-3 rounded-xl bg-espresso-900 hover:bg-terracotta-600 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                            <span>Inscribirme / Ver Planes</span>
+                            <i data-lucide="credit-card" class="w-3.5 h-3.5"></i>
+                        </a>
+                        <button type="button" onclick="inquireAboutPlan('Clase Grupal Nivel A1-A2 (Base e Inglés Cotidiano)')" class="w-full py-2 px-3 rounded-xl bg-cream-100 hover:bg-cream-200 text-espresso-900 font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                            <span>Consultar</span>
+                            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Level Tier 2: B1 -->
+                <div class="bg-white rounded-3xl border border-cream-200 p-6 flex flex-col justify-between shadow-sm card-hover">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-xl bg-sage-100 text-sage-700 font-serif font-bold text-sm">Nivel B1</span>
+                            <span class="text-xs font-semibold text-stone-400">Intermedio</span>
+                        </div>
+                        <p class="text-stone-600 text-xs sm:text-sm mt-2.5 leading-relaxed">
+                            Pasá de las oraciones básicas a contar historias, expresar opiniones y desenvolverte con soltura en viajes o el trabajo.
+                        </p>
+                        <ul class="mt-5 pt-4 border-t border-cream-100 space-y-2 text-xs text-stone-700">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-sage-600 shrink-0 mt-0.5"></i>
+                                <span>Compartir experiencias, opiniones y anécdotas</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-sage-600 shrink-0 mt-0.5"></i>
+                                <span>Expresar y justificar tus opiniones en debates grupales</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-cream-100 space-y-2">
+                        <a href="#schedule-pricing" class="w-full py-2.5 px-3 rounded-xl bg-espresso-900 hover:bg-terracotta-600 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                            <span>Inscribirme / Ver Planes</span>
+                            <i data-lucide="credit-card" class="w-3.5 h-3.5"></i>
+                        </a>
+                        <button type="button" onclick="inquireAboutPlan('Clase Grupal Nivel B1 (Fluidez e Independencia)')" class="w-full py-2 px-3 rounded-xl bg-cream-100 hover:bg-cream-200 text-espresso-900 font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                            <span>Consultar</span>
+                            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Level Tier 3: B2 -->
+                <div class="bg-white rounded-3xl border-2 border-terracotta-500/40 p-6 flex flex-col justify-between shadow-md card-hover relative">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-xl bg-terracotta-500/15 text-terracotta-700 font-serif font-bold text-sm">Nivel B2</span>
+                            <span class="text-xs font-semibold text-terracotta-600">Intermedio-Alto</span>
+                        </div>
+                        <p class="text-stone-600 text-xs sm:text-sm mt-2.5 leading-relaxed">
+                            Debatí temas culturales y profesionales complejos, afiná los matices y ganá velocidad y precisión.
+                        </p>
+                        <ul class="mt-5 pt-4 border-t border-cream-100 space-y-2 text-xs text-stone-700">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-terracotta-600 shrink-0 mt-0.5"></i>
+                                <span>Debates estructurados sobre medios, sociedad y cultura</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-terracotta-600 shrink-0 mt-0.5"></i>
+                                <span>Defender puntos de vista y participar en entornos diversos</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-terracotta-600 shrink-0 mt-0.5"></i>
+                                <span>Ampliación del léxico y precisión gramatical</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-cream-100 space-y-2">
+                        <a href="#schedule-pricing" class="w-full py-2.5 px-3 rounded-xl bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+                            <span>Inscribirme / Ver Planes</span>
+                            <i data-lucide="credit-card" class="w-3.5 h-3.5"></i>
+                        </a>
+                        <button type="button" onclick="inquireAboutPlan('Clase Grupal Nivel B2 (Debate y Preparación Profesional)')" class="w-full py-2 px-3 rounded-xl bg-cream-100 hover:bg-cream-200 text-espresso-900 font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                            <span>Consultar</span>
+                            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Level Tier 4: C1 -->
+                <div class="bg-white rounded-3xl border border-cream-200 p-6 flex flex-col justify-between shadow-sm card-hover">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-xl bg-espresso-900 text-white font-serif font-bold text-sm">Nivel C1</span>
+                            <span class="text-xs font-semibold text-stone-500">Avanzado</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-espresso-900 leading-snug">Dominio y Matices</h3>
+                        <p class="text-stone-600 text-xs sm:text-sm mt-2.5 leading-relaxed">
+                            Discurso profesional y cultural de alto nivel, y un inglés hablado y escrito sofisticado.
+                        </p>
+                        <ul class="mt-5 pt-4 border-t border-cream-100 space-y-2 text-xs text-stone-700">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-espresso-900 shrink-0 mt-0.5"></i>
+                                <span>Hablar en profundidad sobre temas complejos o abstractos</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-espresso-900 shrink-0 mt-0.5"></i>
+                                <span>Perfeccionar tu precisión y espontaneidad al hablar para expresar ideas complejas.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-espresso-900 shrink-0 mt-0.5"></i>
+                                <span>Escribir ensayos, reseñas o textos creativos y analíticos.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-cream-100 space-y-2">
+                        <a href="#schedule-pricing" class="w-full py-2.5 px-3 rounded-xl bg-espresso-900 hover:bg-terracotta-600 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                            <span>Inscribirme / Ver Planes</span>
+                            <i data-lucide="credit-card" class="w-3.5 h-3.5"></i>
+                        </a>
+                        <button type="button" onclick="inquireAboutPlan('Clase Grupal Nivel C1 (Dominio y Matices)')" class="w-full py-2 px-3 rounded-xl bg-cream-100 hover:bg-cream-200 text-espresso-900 font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                            <span>Consultar</span>
+                            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Banner for Level Placement -->
+            <div class="mt-10 bg-white rounded-2xl p-6 sm:p-7 border border-cream-200 shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                <div class="flex items-start gap-4 max-w-2xl">
+                    <div class="w-11 h-11 rounded-2xl bg-sage-100 text-sage-700 flex items-center justify-center shrink-0 mt-0.5">
+                        <i data-lucide="compass" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-base font-serif font-bold text-espresso-900">¿No estás seguro de qué nivel se adapta mejor a vos?</p>
+                        <p class="text-xs sm:text-sm text-stone-600 mt-1 leading-relaxed">
+                            Hacé gratis el <strong class="text-espresso-900 font-semibold">Test de nivelación online de Cambridge English</strong> para conocer tu nivel actual en pocos minutos, ¡y compartime tu resultado al escribirme o agendar tu charla inicial para confirmar tu grupo ideal!
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto shrink-0">
+                    <a href="https://www.cambridgeenglish.org/es/test-your-english/" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-terracotta-600 hover:bg-terracotta-700 text-white text-xs font-semibold transition-all shadow-sm flex items-center justify-center gap-2">
+                        <span>Hacer el test de nivel MCER</span>
+                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    </a>
+                    <button type="button" onclick="inquireAboutPlan('Resultado del Test Cambridge y Ubicación de Nivel')" class="px-5 py-3 rounded-xl bg-cream-100 hover:bg-espresso-900 hover:text-white text-espresso-900 text-xs font-semibold transition-colors flex items-center justify-center gap-1.5">
+                        <span>Compartir mi resultado</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: GROUP CLASSES BY LEVEL SECTION -->
+
+    <!-- ==================== SAMPLE MATERIALS ==================== -->
+    <section id="materials" class="py-20 bg-sage-50 border-y border-sage-100 scroll-mt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-sage-700 font-semibold text-sm uppercase tracking-wider">Recursos de Aprendizaje Gratuitos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso-900 mt-2">
+                    Materiales de Muestra
+                </h2>
+                <p class="text-stone-600 mt-3 text-base">
+                    ¿Tenés curiosidad por ver cómo son mis materiales? Mirá un adelanto de nuestras guías de estudio personalizadas a continuación.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between gap-5 card-hover">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-terracotta-500/10 text-terracotta-600 flex items-center justify-center font-bold text-xs">PDF</div>
+                        <h4 class="font-bold text-espresso-900 text-base">Frases para Emails Profesionales y Reuniones Remotas</h4>
+                        <p class="text-stone-500 text-xs sm:text-sm leading-relaxed">Más de 45 expresiones naturales para presentar datos, hacer seguimientos cordiales y participar en videollamadas.</p>
+                    </div>
+                    <button onclick="openMaterialPreview('business')" class="w-full px-4 py-2.5 rounded-xl bg-cream-100 hover:bg-terracotta-600 hover:text-white text-espresso-900 text-xs font-semibold transition-colors flex items-center justify-center gap-1.5">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        <span>Ver Adelanto de la Guía</span>
+                    </button>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between gap-5 card-hover">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-sage-100 text-sage-700 flex items-center justify-center font-bold text-xs">GUÍA</div>
+                        <h4 class="font-bold text-espresso-900 text-base">Mazo de Conversación: Cine, Música y Cultura Pop</h4>
+                        <p class="text-stone-500 text-xs sm:text-sm leading-relaxed">Disparadores de debate y adjetivos expresivos para ir más allá del básico "I liked it".</p>
+                    </div>
+                    <button onclick="openMaterialPreview('culture')" class="w-full px-4 py-2.5 rounded-xl bg-cream-100 hover:bg-terracotta-600 hover:text-white text-espresso-900 text-xs font-semibold transition-colors flex items-center justify-center gap-1.5">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        <span>Ver Adelanto de la Guía</span>
+                    </button>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between gap-5 card-hover">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-800 flex items-center justify-center font-bold text-xs">PLAN</div>
+                        <h4 class="font-bold text-espresso-900 text-base">Seguimiento de Fluidez y Objetivos del Estudiante</h4>
+                        <p class="text-stone-500 text-xs sm:text-sm leading-relaxed">Mirá cómo mapeamos tu confianza al hablar, tu vocabulario activo y tus metas mes a mes.</p>
+                    </div>
+                    <button onclick="openMaterialPreview('tracker')" class="w-full px-4 py-2.5 rounded-xl bg-cream-100 hover:bg-terracotta-600 hover:text-white text-espresso-900 text-xs font-semibold transition-colors flex items-center justify-center gap-1.5">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        <span>Ver Adelanto de la Guía</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRECIOS Y AGENDA (2 PASOS CON MERCADO PAGO ACTIVO) ==================== -->
+    <section id="schedule-pricing" class="py-20 bg-cream-50 border-y border-cream-200 scroll-mt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-terracotta-600 font-semibold text-sm uppercase tracking-wider">Comenzá tus clases</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso-900 mt-2">
+                    Inversión y Agenda
+                </h2>
+                <p class="text-stone-600 mt-3 text-base sm:text-lg">
+                    Elegí cómo querés empezar. Podés agendar una charla gratuita para conocernos, o si ya sabés qué plan querés, realizar el pago y reservar tus horarios.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+                <!-- Columna Izquierda: Charla Gratuita -->
+                <div class="bg-white rounded-3xl p-8 sm:p-10 border border-cream-200 shadow-sm flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-sage-100 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-sage-100 text-sage-700 flex items-center justify-center mb-6">
+                            <i data-lucide="coffee" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-espresso-900 mb-4">
+                            Charla Inicial Gratuita (20 min)
+                        </h3>
+                        <p class="text-stone-600 mb-8 leading-relaxed">
+                            En este encuentro nos conocemos, charlamos sobre tus objetivos, evaluamos tu nivel de forma relajada y armamos un plan a tu medida. 
+                            <br><br>
+                            <strong>¿Cómo agendar?</strong> Hacé clic en el botón de abajo y enviame un correo con tus <strong>días y horarios disponibles</strong>. Te responderé a la brevedad para confirmar nuestro encuentro.
+                        </p>
+                        <a href="mailto:ceciliaroccogr@gmail.com?subject=Reserva%20de%20Charla%20Inicial%20Gratuita&body=Hola%20Ceci!%20Me%20gustar%C3%ADa%20agendar%20la%20charla%20inicial.%20Mis%20d%C3%ADas%20y%20horarios%20disponibles%20son:%20" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-espresso-900 hover:bg-terracotta-600 text-white font-semibold text-base transition-all shadow-md flex items-center justify-center gap-2.5">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            <span>Enviar disponibilidad por Email</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Pagos y Agenda -->
+                <div class="bg-white rounded-3xl p-8 sm:p-10 border border-cream-200 shadow-sm">
+                    <h3 class="font-serif text-2xl font-bold text-espresso-900 mb-6">
+                        Clases Individuales y Grupales
+                    </h3>
+                    
+                    <div class="space-y-8">
+                        <!-- Paso 1: Pagar -->
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="flex items-center justify-center w-7 h-7 rounded-full bg-terracotta-100 text-terracotta-700 font-bold text-sm">1</span>
+                                <h4 class="font-bold text-lg text-espresso-900">Aboná tu plan</h4>
+                            </div>
+                            
+                            <p class="text-stone-500 text-sm mb-4">Seleccioná tu plan para pagar de forma segura a través de Mercado Pago:</p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <!-- 1:1 -->
+                                <a href="https://mpago.la/16WdqM2" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl border border-cream-200 hover:border-terracotta-500 transition-colors group bg-cream-50 hover:bg-white">
+                                    <div class="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-1">Clases 1:1</div>
+                                    <div class="font-semibold text-espresso-900 text-sm">Clase Suelta</div>
+                                    <div class="text-terracotta-600 font-bold mt-1">$600 UYU</div>
+                                </a>
+                                <a href="https://mpago.la/2RgcRPT" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl border border-cream-200 hover:border-terracotta-500 transition-colors group bg-cream-50 hover:bg-white">
+                                    <div class="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-1">Clases 1:1</div>
+                                    <div class="font-semibold text-espresso-900 text-sm">Pack 4 Clases</div>
+                                    <div class="text-terracotta-600 font-bold mt-1">$2.100 UYU</div>
+                                </a>
+                                <a href="https://mpago.la/2mMcXeT" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl border border-cream-200 hover:border-terracotta-500 transition-colors group bg-cream-50 hover:bg-white sm:col-span-2">
+                                    <div class="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-1">Clases 1:1</div>
+                                    <div class="font-semibold text-espresso-900 text-sm">Pack 8 Clases</div>
+                                    <div class="text-terracotta-600 font-bold mt-1">$4.000 UYU</div>
+                                </a>
+                                <!-- Grupales -->
+                                <a href="https://mpago.la/2vi2Vpg" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl border border-cream-200 hover:border-sage-500 transition-colors group bg-sage-50 hover:bg-white">
+                                    <div class="text-[10px] font-bold text-sage-600 uppercase tracking-wider mb-1">Grupales (2x sem)</div>
+                                    <div class="font-semibold text-espresso-900 text-sm">Cuota Mensual</div>
+                                    <div class="text-sage-700 font-bold mt-1">$3.000 UYU</div>
+                                </a>
+                                <a href="https://mpago.la/2pYqANh" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl border border-cream-200 hover:border-sage-500 transition-colors group bg-sage-50 hover:bg-white">
+                                    <div class="text-[10px] font-bold text-sage-600 uppercase tracking-wider mb-1">Grupales (2x sem)</div>
+                                    <div class="font-semibold text-espresso-900 text-sm">3 meses </div>
+                                    <div class="text-sage-700 font-bold mt-1">$8.000 UYU</div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Paso 2: Agendar -->
+                        <div class="pt-6 border-t border-cream-100">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="flex items-center justify-center w-7 h-7 rounded-full bg-terracotta-100 text-terracotta-700 font-bold text-sm">2</span>
+                                <h4 class="font-bold text-lg text-espresso-900">Agendá tus horarios</h4>
+                            </div>
+                            <p class="text-stone-600 text-sm mb-4">
+                                Una vez realizado el pago, hacé clic en el botón para elegir los horarios de tus clases directamente en el calendario.
+                            </p>
+                            <a href="https://calendar.app.google/LxL8zCdiqGJmaNNe6" target="_blank" rel="noopener noreferrer" class="w-full px-5 py-4 rounded-xl bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-base transition-all shadow-sm flex items-center justify-center gap-2">
+                                <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                                <span>Abrir agenda</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ME SECTION ==================== -->
+    <section id="about" class="py-20 scroll-mt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl border border-cream-200 p-8 sm:p-12 shadow-sm">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-5">
+                        <span class="text-terracotta-600 font-semibold text-sm uppercase tracking-wider">Conocé a tu Profesora</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso-900">
+                            ¿Por qué aprender conmigo? Porque el idioma se trata de conectar con personas.
+                        </h2>
+                        <p class="text-stone-600 leading-relaxed">
+                            ¡Hola! Soy <strong class="text-espresso-900">Cecilia Rocco Grandal</strong>. Soy estudiante de la Lic. en Desarrollo por la Facultad de Ciencias Sociales (Universidad de la República) en Uruguay, y he trabajado durante años en la intersección entre las ciencias sociales y la docencia de inglés.
+                        </p>
+                        <p class="text-stone-600 leading-relaxed">
+                            Cuando trabajo con mis estudiantes, identifico exactamente qué está buscando el/la estudiante en relación al aprendizaje del idioma —ya sea la confianza en el trabajo/estudio, el desarrollo académico o encontrar las palabras justas— y armo un plan claro y motivador para que alcance sus metas.
+                        </p>
+                        <p class="text-stone-600 leading-relaxed">
+                            Fuera del trabajo, creo muchísimo en el aprendizaje continuo y en los hobbies creativos, ¡lo que hace que nuestras clases estén llenas de curiosidad genuina y grandes charlas!
+                        </p>
+                    </div>
+
+                    <!-- Life Beyond the Classroom Bento Grid -->
+                    <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                        <div class="p-4 rounded-2xl bg-cream-50 border border-cream-200">
+                            <span class="text-2xl">💃🇰🇷</span>
+                            <h4 class="font-bold text-espresso-900 text-sm mt-2">K-Pop</h4>
+                            <p class="text-xs text-stone-500 mt-1">Me encanta aprender coreografías de K-pop y pertenezco a un grupo de covers, ¡con el que competimos!</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-cream-50 border border-cream-200">
+                            <span class="text-2xl">📚️</span>
+                            <h4 class="font-bold text-espresso-900 text-sm mt-2">Lectura</h4>
+                            <p class="text-xs text-stone-500 mt-1">Leo todas las noches y participo de un club de lectura del género No-ficción en inglés.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ME BOX & FOOTER ==================== -->
+    <footer id="contact" class="bg-espresso-900 text-white pt-20 pb-14 scroll-mt-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Interactive Contact Me Box -->
+            <div id="contact-box" class="bg-white text-espresso-900 rounded-3xl p-6 sm:p-10 shadow-2xl border border-cream-200 max-w-3xl mx-auto mb-16">
+                <div class="text-left">
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-espresso-900">
+                        ¿Tenés dudas sobre un plan o querés coordinar tu clase?
+                    </h2>
+                    <p class="text-stone-600 text-sm sm:text-base mt-1.5">
+                        Elegí el plan que te interesa y personalizá tu mensaje abajo. Me llega directo por WhatsApp o Email.
+                    </p>
+                </div>
+
+                <div class="mt-6 space-y-4 text-left">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="student-name" class="block text-xs font-bold uppercase tracking-wider text-stone-500 mb-1.5">Tu Nombre</label>
+                            <input type="text" id="student-name" placeholder="Ej. Martín" oninput="updateInquiryPreview()" class="w-full px-4 py-3 rounded-xl bg-cream-50 border border-cream-200 text-sm text-espresso-900 focus:outline-none focus:border-terracotta-600">
+                        </div>
+                        <div>
+                            <label for="selected-plan" class="block text-xs font-bold uppercase tracking-wider text-stone-500 mb-1.5">Plan o Curso de Interés</label>
+                            <select id="selected-plan" onchange="handlePlanDropdownChange()" class="w-full px-4 py-3 rounded-xl bg-cream-50 border border-cream-200 text-sm text-espresso-900 font-medium focus:outline-none focus:border-terracotta-600">
+                                <option value="Charla Inicial Gratis de 20 Min">Charla Inicial Gratis de 20 Min</option>
+                                <option value="Plan Conversacional (1:1)">Plan Conversacional (1:1)</option>
+                                <option value="Plan de Inglés para Profesionales (1:1)">Plan de Inglés para Profesionales (1:1)</option>
+                                <option value="Plan de Inglés para Viajes (1:1)">Plan de Inglés para Viajes (1:1)</option>
+                                <option value="Clase Suelta Individual ($750 UYU)">Clase Suelta Individual ($750 UYU)</option>
+                                <option value="Pack 4 Clases 1:1 ($2.800 UYU)">Pack 4 Clases 1:1 ($2.800 UYU)</option>
+                                <option value="Pack 8 Clases 1:1 ($4.500 UYU)">Pack 8 Clases 1:1 ($4.500 UYU)</option>
+                                <option value="Clase Grupal Nivel A1-A2 (Base e Inglés Cotidiano)">Clase Grupal Nivel A1-A2</option>
+                                <option value="Clase Grupal Nivel B1 (Fluidez e Independencia)">Clase Grupal Nivel B1</option>
+                                <option value="Clase Grupal Nivel B2 (Debate y Preparación Profesional)">Clase Grupal Nivel B2</option>
+                                <option value="Clase Grupal Nivel C1 (Dominio y Matices)">Clase Grupal Nivel C1</option>
+                                <option value="Cuota Mensual Grupal - 2 veces por semana ($3.000 UYU)">Cuota Mensual Grupal ($3.000 UYU)</option>
+                                <option value="Suscripción Grupal de 3 Meses ($8.000 UYU)">Suscripción Grupal 3 Meses ($8.000 UYU)</option>
+                                <option value="Resultado del Test Cambridge y Ubicación de Nivel">Resultado del Test Cambridge y Nivelación</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="inquiry-message" class="block text-xs font-bold uppercase tracking-wider text-stone-500 mb-1.5">
+                            Tu Mensaje (Podés editarlo o agregar tus horarios disponibles)
+                        </label>
+                        <textarea id="inquiry-message" rows="4" class="w-full p-4 rounded-xl bg-cream-50 border border-cream-200 text-sm text-espresso-900 leading-relaxed focus:outline-none focus:border-terracotta-600">Hola Ceci! Quiero consultar sobre el plan Charla Inicial Gratis de 20 Min. Me gustaría conocer más detalles y coordinar un horario.</textarea>
+                    </div>
+
+                    <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                        <button type="button" onclick="sendInquiryViaWhatsApp()" class="flex-1 py-4 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm sm:text-base shadow-md transition-all flex items-center justify-center gap-2.5">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            <span>Enviar Mensaje por WhatsApp</span>
+                        </button>
+                        <button type="button" onclick="sendInquiryViaEmail()" class="flex-1 py-4 px-6 rounded-2xl bg-espresso-900 hover:bg-terracotta-600 text-white font-semibold text-sm sm:text-base shadow-md transition-all flex items-center justify-center gap-2.5">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            <span>Enviar por Email</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="text-center">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-terracotta-500/20 text-terracotta-500 text-xs font-semibold uppercase tracking-wider mb-3">
+                    Empecemos a Hablar
+                </span>
+                <h3 class="font-serif text-2xl sm:text-4xl font-bold tracking-tight">
+                    ¿Listo para sentirte seguro hablando inglés?
+                </h3>
+                <p class="text-cream-200/80 max-w-xl mx-auto mt-3 text-sm sm:text-base">
+                    Reservá una charla inicial gratuita de 20 minutos y sin compromiso. Conversamos sobre tus objetivos, vemos tu nivel actual y armamos tu plan personalizado.
+                </p>
+
+                <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-cream-200/60 gap-4">
+                    <p>© 2026 English with Ceci • Desde Montevideo, Uruguay 🇺🇾</p>
+                    <div class="flex flex-wrap items-center justify-center gap-6">
+                        <a href="#methodology" class="hover:text-white transition-colors">Metodología</a>
+                        <a href="#courses" class="hover:text-white transition-colors">Cursos 1:1</a>
+                        <a href="#group-classes" class="hover:text-white transition-colors">Clases Grupales</a>
+                        <a href="#materials" class="hover:text-white transition-colors">Materiales</a>
+                        <a href="#schedule-pricing" class="hover:text-white transition-colors">Agenda y Precios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SAMPLE MATERIAL PREVIEW MODAL ==================== -->
+    <div id="material-modal" class="fixed inset-0 z-50 hidden bg-espresso-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-cream-200 relative animate-fadeIn">
+            <button onclick="closeMaterialPreview()" aria-label="Cerrar ventana" class="absolute top-5 right-5 p-2 rounded-full bg-cream-100 hover:bg-cream-200 text-stone-600">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <span id="modal-tag" class="text-xs font-bold uppercase tracking-wider text-terracotta-600">Adelanto de Material</span>
+            <h3 id="modal-title" class="font-serif text-2xl font-bold text-espresso-900 mt-1">Título del Material</h3>
+            <div id="modal-body" class="mt-4 text-sm text-stone-600 space-y-3 bg-cream-50 p-4 rounded-2xl border border-cream-200">
+                <!-- Populated dynamically -->
+            </div>
+            <div class="mt-6 flex items-center justify-between gap-3">
+                <span class="text-xs text-stone-400">PDF completo compartido con todos los alumnos</span>
+                <button onclick="closeMaterialPreview()" class="px-5 py-2.5 rounded-xl bg-espresso-900 text-white text-xs font-semibold hover:bg-terracotta-600 transition-colors">
+                    Entendido, Cerrar Vista Previa
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== INTERACTIVE SCRIPTS ==================== -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // CONFIGURACIÓN DE CONTACTO
+        const CECILIA_WHATSAPP_NUMBER = "59898579839";
+        const CECILIA_EMAIL = "ceciliaroccogr@gmail.com";
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // ==================== CONTACT ME AUTO-FILL LOGIC ====================
+        function buildAutoMessage(planName, studentName) {
+            const greeting = studentName ? `Hola Ceci! Soy ${studentName}.` : `Hola Ceci!`;
+            return `${greeting} Quiero consultar sobre el plan "${planName}". Me gustaría conocer más detalles y coordinar para empezar.`;
+        }
+
+        function inquireAboutPlan(planName) {
+            const selectEl = document.getElementById('selected-plan');
+            const msgEl = document.getElementById('inquiry-message');
+            const nameVal = document.getElementById('student-name').value.trim();
+
+            for (let i = 0; i < selectEl.options.length; i++) {
+                if (selectEl.options[i].value === planName) {
+                    selectEl.selectedIndex = i;
+                    break;
+                }
+            }
+
+            msgEl.value = buildAutoMessage(planName, nameVal);
+
+            const contactBox = document.getElementById('contact-box');
+            contactBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => {
+                msgEl.focus();
+            }, 600);
+        }
+
+        function handlePlanDropdownChange() {
+            const selectEl = document.getElementById('selected-plan');
+            const nameVal = document.getElementById('student-name').value.trim();
+            document.getElementById('inquiry-message').value = buildAutoMessage(selectEl.value, nameVal);
+        }
+
+        function updateInquiryPreview() {
+            const selectEl = document.getElementById('selected-plan');
+            const nameVal = document.getElementById('student-name').value.trim();
+            const msgEl = document.getElementById('inquiry-message');
+            if (msgEl.value.startsWith('Hola Ceci!')) {
+                msgEl.value = buildAutoMessage(selectEl.value, nameVal);
+            }
+        }
+
+        function sendInquiryViaWhatsApp() {
+            const msg = document.getElementById('inquiry-message').value.trim();
+            const encoded = encodeURIComponent(msg);
+            window.open(`https://wa.me/${CECILIA_WHATSAPP_NUMBER}?text=${encoded}`, '_blank');
+        }
+
+        function sendInquiryViaEmail() {
+            const plan = document.getElementById('selected-plan').value;
+            const msg = document.getElementById('inquiry-message').value.trim();
+            const subject = encodeURIComponent(`Consulta: ${plan} - English with Ceci`);
+            const body = encodeURIComponent(msg);
+            window.location.href = `mailto:${CECILIA_EMAIL}?subject=${subject}&body=${body}`;
+        }
+
+        // ==================== SAMPLE MATERIAL PREVIEWS MODAL ====================
+        const materialPreviews = {
+            business: {
+                tag: "Adelanto de Guía PDF",
+                title: "Frases para Emails Profesionales y Reuniones Remotas",
+                content: `
+                    <p class="font-semibold text-espresso-900">1. Para presentar datos o conclusiones de un proyecto:</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><em>"Looking at the key takeaways from this month's user survey..."</em></li>
+                        <li><em>"There's a noticeable upward trend in..."</em></li>
+                    </ul>
+                    <p class="font-semibold text-espresso-900 pt-2">2. Para hacer seguimiento cordial por Slack o Email:</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><em>"Just floating this back to the top of your inbox whenever you have a moment."</em></li>
+                        <li><em>"Let me know if we're still on track for Friday's milestone."</em></li>
+                    </ul>
+                `
+            },
+            culture: {
+                tag: "Adelanto de Mazo de Conversación",
+                title: "Disparadores de Cine, Música y Cultura Pop",
+                content: `
+                    <p class="font-semibold text-espresso-900">Disparador de Debate Inicial:</p>
+                    <p class="italic">"Does streaming culture make us appreciate albums and films less, or does it democratize access to global art?"</p>
+                    <p class="font-semibold text-espresso-900 pt-2">Mejora de Vocabulario (En lugar de 'Good' o 'Boring'):</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Gripping / Compelling:</strong> Te atrapa de principio a fin.</li>
+                        <li><strong>Slow-burn:</strong> Va construyendo tensión o emoción de forma gradual.</li>
+                        <li><strong>Derivative:</strong> Se siente como una copia de otra obra.</li>
+                    </ul>
+                `
+            },
+            tracker: {
+                tag: "Marco de Seguimiento",
+                title: "Seguimiento de Fluidez y Objetivos del Estudiante",
+                content: `
+                    <p class="font-semibold text-espresso-900">Cómo medimos tu progreso cada 4 semanas:</p>
+                    <ul class="list-disc pl-5 space-y-1.5">
+                        <li><strong>Banco de Vocabulario Activo:</strong> Palabras que pasaste de solo entender a usar activamente al conversar.</li>
+                        <li><strong>Chequeo de Fluidez y Pausas:</strong> Reducir las pausas de autocorrección al contar historias de 3 minutos.</li>
+                        <li><strong>Misión Real Cumplida:</strong> Ej. Dar una actualización de proyecto de 5 minutos en inglés o completar un simulacro de entrevista.</li>
+                    </ul>
+                `
+            }
+        };
+
+        function openMaterialPreview(key) {
+            const data = materialPreviews[key];
+            if (!data) return;
+            document.getElementById('modal-tag').textContent = data.tag;
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-body').innerHTML = data.content;
+            document.getElementById('material-modal').classList.remove('hidden');
+        }
+
+        function closeMaterialPreview() {
+            document.getElementById('material-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
